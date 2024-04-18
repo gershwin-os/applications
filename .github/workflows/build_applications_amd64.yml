@@ -48,7 +48,7 @@ jobs:
           unzip system_amd64.zip
           tar -xf /__w/applications/applications/system-amd64.tar.gz -C /
           ./build.sh
-          cd /__w/applications/applications/ && tar -zcvf applications-amd64.tar.gz /Applications /Developer /Library /System 
+          cd /__w/applications/applications/ && tar -zcvf applications-amd64.tar.gz /Applications 
         continue-on-error: false
       - name: Upload artifact
         uses: actions/upload-artifact@v4
