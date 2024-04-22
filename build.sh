@@ -17,3 +17,4 @@ if [ -f "/home/runner/work/applications/applications/system_arm64.zip" ]; then
 fi
 
 cd ${SRC}/gap/ported-apps/Games/Chess && gmake -j"${CPUS}" || exit 1 || exit 1 && gmake install
+cd ${SRC}/gap/system-apps/Terminal && gmake -j"${CPUS}" || exit 1 || exit 1 && gmake install
