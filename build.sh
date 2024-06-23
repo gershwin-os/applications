@@ -3,6 +3,9 @@
 # Exit immediately if any command exits with a non-zero status
 set -e
 
+# Ensure that submodules have been checked out
+git submodule update --init --recursive
+
 # Determine number of CPUs when building
 CPUS=$(nproc)
 export GNUSTEP_INSTALLATION_DOMAIN=LOCAL
