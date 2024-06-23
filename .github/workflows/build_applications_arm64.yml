@@ -57,7 +57,7 @@ jobs:
           unzip system_arm64.zip
           tar -xf /home/runner/work/applications/applications/system-arm64.tar.gz -C /
           ./build.sh
-          cd /home/runner/work/applications/applications/ && tar -zcvf applications-amd64.tar.gz /Applications
+          cd /home/runner/work/applications/applications/ && tar -zcvf applications-arm64.tar.gz /Applications
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
