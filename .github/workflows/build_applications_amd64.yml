@@ -1,4 +1,4 @@
-name: Build system on Debian 12 AMD64
+name: Build applications on Debian 12 AMD64
 
 on:
   push:
@@ -43,7 +43,7 @@ jobs:
         run: |
           curl -s -o system_amd64.zip -L -u ${{ secrets.GH_TOKEN }} "${{ env.AMD64_ARTIFACT_URL }}"
         shell: bash
-      - name: Build system on Debian 12 AMD64
+      - name: Build applications on Debian 12 AMD64
         run: |
           unzip system_amd64.zip
           tar -xf /__w/applications/applications/system-amd64.tar.gz -C /
