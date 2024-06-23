@@ -61,5 +61,5 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
-        name: gershwin-system-arm64-main
+        name: gershwin-applications-arm64-main
         path: /home/runner/work/applications/applications/applications-arm64.tar.gz
