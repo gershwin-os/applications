@@ -13,7 +13,7 @@ This repository automates the installation of GNUstep Applications on Debian, ut
 
 ## Installation Paths (LOCAL domain)
 
-The components are installed into directories under the LOCAL domain, organized in a hierarchical structure that mimics the developer environment found in original Mac OS X versions:
+The components are installed into directories under the LOCAL domain:
 
 - **Applications**: `/Applications`
 - **Admin Applications**: `/Applications/Utilities`
@@ -29,7 +29,7 @@ The components are installed into directories under the LOCAL domain, organized 
 
 ## Usage (Debian)
 
-Follow these steps to set up Gershwin System on Debian:
+Follow these steps to install Applications on Debian:
 
 1. Clone the repository with submodules:
 
