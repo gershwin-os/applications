@@ -6,7 +6,7 @@ set -e
 # Determine number of CPUs when building
 CPUS=$(nproc)
 export GNUSTEP_INSTALLATION_DOMAIN=LOCAL
-. /Developer/Makefiles/GNUstep.sh
+. /System/Makefiles/GNUstep.sh
 
 # Initialize WORKDIR to empty (if not already set)
 export WORKDIR=""
@@ -39,3 +39,5 @@ fi
 
 cd ${WORKDIR}/gap/ported-apps/Games/Chess && gmake -j"${CPUS}" || exit 1 || exit 1 && gmake install
 cd ${WORKDIR}/gap/system-apps/Terminal && gmake -j"${CPUS}" || exit 1 || exit 1 && gmake install
+cd ${WORKDIR}/apps-gorm && gmake -j"${CPUS}" || exit 1 && gmake install
+cd ${WORKDIR}/apps-projectcenter && gmake -j"${CPUS}" || exit 1 || exit 1 && gmake install

@@ -10,6 +10,8 @@ This repository automates the installation of GNUstep Applications on Debian, ut
 
 - **gap**: Chess
 - **gap**: Terminal
+- **apps-gorm**: Gorm - Interface Builder for GNUstep
+- **apps-projectcenter**: Project Center - Integrated Development Environment (IDE) for GNUstep
 
 ## Installation Paths (LOCAL domain)
 
