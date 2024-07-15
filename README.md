@@ -41,7 +41,7 @@ git clone https://github.com/gershwin-os/applications.git --recurse-submodules
 
 2. Source GNUstep.sh:
 ```
-. /Developer/Makefiles/GNUstep.sh 
+. /System/Makefiles/GNUstep.sh 
 ```
 
 3. Build the components:
