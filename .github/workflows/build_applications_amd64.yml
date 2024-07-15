@@ -44,7 +44,7 @@ jobs:
           curl -s -o gershwin-library-amd64.zip -L -u ${{ secrets.GH_TOKEN }} "${{ env.AMD64_ARTIFACT_URL }}"
         shell: bash
       - name: Get latest AMD64 workflow run ID
-        id: get_latest_amd64_run
+        id: get_latest_system_amd64_run
         run: |
           amd64_response=$(curl -s -X GET -u ${{ secrets.GH_TOKEN }} "https://api.github.com/repos/gershwin-os/system/actions/workflows/build_system_amd64.yml/runs?status=success&per_page=1")
           echo "AMD64 API response: $amd64_response"
@@ -53,7 +53,7 @@ jobs:
           echo "AMD64_RUN_ID=$latest_run_amd64" >> $GITHUB_ENV
         shell: bash
       - name: Get AMD64 artifact URL
-        id: get_amd64_artifact_url
+        id: get_amd64_system_artifact_url
         run: |
           artifact_url_amd64=$(curl -s -X GET -u ${{ secrets.GH_TOKEN }} "https://api.github.com/repos/gershwin-os/system/actions/runs/${{ env.AMD64_RUN_ID }}/artifacts" | jq -r '.artifacts[0].archive_download_url')
           echo "AMD64 Artifact URL: $artifact_url_amd64"
