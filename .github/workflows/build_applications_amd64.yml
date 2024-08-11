@@ -45,7 +45,6 @@ jobs:
         shell: bash
       - name: Build applications on Debian 12 AMD64
         run: |
-          unzip gershwin-library-amd64.zip
           unzip system_amd64.zip
           tar -xf /__w/applications/applications/system.txz -C /
           make install
