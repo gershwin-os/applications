@@ -27,6 +27,7 @@ install: check_root
     cd ${WORKDIR}/gap/system-apps/Terminal && gmake -j"${CPUS}" || exit 1 || exit 1 && gmake install; \
     cd ${WORKDIR}/apps-gorm && gmake -j"${CPUS}" || exit 1 && gmake install; \
     cd ${WORKDIR}/apps-projectcenter && gmake -j"${CPUS}" || exit 1 || exit 1 && gmake install; \
+	fi;
 
 # Define the uninstall target
 uninstall: check_root
