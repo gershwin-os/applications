@@ -39,12 +39,7 @@ Follow these steps to install Applications on Debian:
 git clone https://github.com/gershwin-os/applications.git --recurse-submodules
 ```
 
-2. Source GNUstep.sh:
-```
-. /System/Makefiles/GNUstep.sh 
-```
-
-3. Build the components:
+2. Build the components:
 ```
 cd applications && sudo make install
 ```
