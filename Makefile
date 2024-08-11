@@ -23,15 +23,15 @@ install: check_root
 	else \
 	  WORKDIR=`pwd`; \
 	fi; \
-	. /System/Library/Preferences/GNUstep.conf; \
+	. /System/Makefiles/GNUstep.sh; \
 	CPUS=`nproc`; \
-	echo "CPUS is set to: $$CPUS"; \
-	echo "WORKDIR is set to: $$WORKDIR"; \
+	echo "CPUS is set to: to: $$WORKDIR"; \
 	cd $$WORKDIR/gap/ported-apps/Games/Chess && gmake -j"${CPUS}" || exit 1 || exit 1 && gmake install; \
 	cd $$WORKDIR/gap/system-apps/Terminal && gmake -j"${CPUS}" || exit 1 || exit 1 && gmake install; \
 	cd $$WORKDIR/apps-gorm && gmake -j"${CPUS}" || exit 1 && gmake install; \
 	cd $$WORKDIR/apps-projectcenter && gmake -j"${CPUS}" || exit 1 || exit 1 && gmake install; \
-	fi;
+	fi;$$CPUS"; \
+	echo "WORKDIR is set 
 
 # Define the uninstall target
 uninstall: check_root
