@@ -23,6 +23,7 @@ install: check_root
 	else \
 	  WORKDIR=`pwd`; \
 	fi; \
+	. /System/Library/Preferences/GNUstep.conf; \
 	CPUS=`nproc`; \
 	export GNUSTEP_INSTALLATION_DOMAIN="LOCAL"; \
 	echo "CPUS is set to: $$CPUS"; \
