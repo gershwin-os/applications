@@ -25,9 +25,7 @@ install: check_root
 	fi; \
 	. /System/Library/Preferences/GNUstep.conf; \
 	CPUS=`nproc`; \
-	export GNUSTEP_INSTALLATION_DOMAIN="LOCAL"; \
 	echo "CPUS is set to: $$CPUS"; \
-	echo "DOMAIN is set to: $$GNUSTEP_INSTALLATION_DOMAIN"; \
 	echo "WORKDIR is set to: $$WORKDIR"; \
 	cd $$WORKDIR/gap/ported-apps/Games/Chess && gmake -j"${CPUS}" || exit 1 || exit 1 && gmake install; \
     cd $$WORKDIR/gap/system-apps/Terminal && gmake -j"${CPUS}" || exit 1 || exit 1 && gmake install; \
