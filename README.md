@@ -1,6 +1,6 @@
 # Gershwin Applications
 
-This repository automates the installation of GNUstep Applications on Debian, utilizing submodules for a streamlined setup.
+This repository automates the installation of Gershwin Applications.
 
 ### Requirements
 
@@ -29,7 +29,7 @@ The components are installed into directories under the LOCAL domain:
 - **Man Pages**: `/Library/Documentation/man`
 - **Info Pages**: `/Library/Documentation/info`
 
-## Usage (Debian)
+## Installation
 
 Follow these steps to install Applications on Debian:
 
@@ -46,10 +46,19 @@ git clone https://github.com/gershwin-os/applications.git --recurse-submodules
 
 3. Build the components:
 ```
-cd applications && sudo ./build.sh
+cd applications && sudo make install
 ```
 
-4. Launch GWorkspace:
+## Uninstallation
+
 ```
-openapp GWorkspace
+sudo make uninstall
+```
+
+## Cleanup
+
+This command will remove the system.txz tar archive:
+
+```
+sudo make clean
 ```

@@ -55,11 +55,10 @@ jobs:
         # Set an output parameter `uname` for use in subsequent steps
         run: |
           unzip system_arm64.zip
-          tar -xf /home/runner/work/applications/applications/system-arm64.tar.gz -C /
-          ./build.sh
-          cd /home/runner/work/applications/applications/ && tar -zcvf applications-arm64.tar.gz /Applications
+          tar -xf /home/runner/work/applications/applications/system.txz -C /
+          make install
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
         name: gershwin-applications-arm64-main
-        path: /home/runner/work/applications/applications/applications-arm64.tar.gz
+        path: /home/runner/work/applications/applications/applications.txz
