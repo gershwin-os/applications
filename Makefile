@@ -30,7 +30,7 @@ install: check_root
 	cd $$WORKDIR/gap/system-apps/Terminal && gmake -j"${CPUS}" || exit 1 || exit 1 && gmake install; \
 	cd $$WORKDIR/apps-gorm && gmake -j"${CPUS}" || exit 1 && gmake install; \
 	cd $$WORKDIR/apps-projectcenter && gmake -j"${CPUS}" || exit 1 || exit 1 && gmake install; \
-	cd $$WORKDIR && tar -cJvf applications.txz $(TARGET_DIR); \
+	cd $$WORKDIR && tar -cJvf applications.txz /Applications /Library; \
 	fi;
 
 # Define the uninstall target
@@ -41,10 +41,17 @@ uninstall: check_root
 	  removed="/Applications"; \
 	  echo "Removed /Applications"; \
 	fi; \
+	if [ -d "/Library" ]; then \
+	  rm -rf /Library; \
+	  removed="$$removed /Library"; \
+	  echo "Removed /Library"; \
+	fi; \
 	if [ -n "$$removed" ]; then \
+	  echo "Removed the following directories: $$removed"; \
 	  return 0; \
 	else \
-	  echo "System appears to be already uninstalled.  Nothing was removed"; \
+	  echo "No directories needed to be removed."; \
+	  return 1; \
 	fi
 
 clean: check_root
