@@ -6,6 +6,7 @@ This repository automates the installation of Gershwin Applications.
 
 * [Gershwin System](https://github.com/gershwin-os/system.git)
 * autoconf (required for backone apps)
+* automate (required for backone apps)
 
 ## Applications Included
 
