@@ -7,3 +7,6 @@
 [submodule "apps-projectcenter"]
 	path = apps-projectcenter
 	url = https://github.com/gnustep/apps-projectcenter
+[submodule "backbone"]
+	path = backbone
+	url = https://git.savannah.nongnu.org/git/backbone.git
