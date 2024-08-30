@@ -30,7 +30,7 @@ install: check_root
 	cd $$WORKDIR/gap/system-apps/Terminal && gmake -j"${CPUS}" || exit 1 || exit 1 && gmake install; \
 	cd $$WORKDIR/apps-gorm && gmake -j"${CPUS}" || exit 1 && gmake install; \
 	cd $$WORKDIR/apps-projectcenter && gmake -j"${CPUS}" || exit 1 || exit 1 && gmake install; \
-	cd $$WORKDIR/backbone && gmake clean; \
+	cd $$WORKDIR/backbone/system && gmake clean; \
 	cd $$WORKDIR && git apply --check backbone-unset-system.patch && git apply backbone-unset-system.patch; \
 	cd $$WORKDIR/backbone/system ./bootstrap && ./configure ; \
 	cd $$WORKDIR/backbone/System/Frameworks/BBAppKit && gmake -j"${CPUS}" || exit 1 || exit 1 && gmake install; \
