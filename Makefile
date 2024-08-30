@@ -12,30 +12,30 @@ TARGET_DIR := /Applications
 
 # Define the install target
 install: check_root
-	@if [ -d "/Applications" ]; then \
+	@if [ -d "$(TARGET_DIR)" ]; then \
 	  echo "System appears to be already installed."; \
 	  exit 0; \
 	else \
-	if [ -d "/__w/applications/applications/" ]; then \
-	  WORKDIR="/__w/applications/applications/"; \
-	elif [ -d "/home/runner/work/applications/applications/" ]; then \
-	  WORKDIR="/home/runner/work/applications/applications/"; \
-	else \
-	  WORKDIR=`pwd`; \
-	fi; \
-	. /System/Makefiles/GNUstep.sh; \
-	CPUS=`nproc`; \
-	echo "CPUS is set to: to: $$WORKDIR"; \
-	cd $$WORKDIR/gap/ported-apps/Games/Chess && gmake -j"${CPUS}" || exit 1 || exit 1 && gmake install; \
-	cd $$WORKDIR/gap/system-apps/Terminal && gmake -j"${CPUS}" || exit 1 || exit 1 && gmake install; \
-	cd $$WORKDIR/apps-gorm && gmake -j"${CPUS}" || exit 1 && gmake install; \
-	cd $$WORKDIR/apps-projectcenter && gmake -j"${CPUS}" || exit 1 || exit 1 && gmake install; \
-	cd $$WORKDIR/backbone && git reset --hard; \
-	cd $$WORKDIR && git apply --check backbone-unset-system.patch && git apply backbone-unset-system.patch; \
-	cd $$WORKDIR/backbone/System ./bootstrap && ./configure ; \
-	cd $$WORKDIR/backbone/System/Frameworks/BBAppKit && gmake -j"${CPUS}" || exit 1 || exit 1 && gmake install; \
-	cd $$WORKDIR/backbone/System/Applications/TextEdit && gmake -j"${CPUS}" || exit 1 || exit 1 && gmake install; \
-	cd $$WORKDIR && tar -cJvf applications.txz /Applications /Library; \
+	  if [ -d "/__w/applications/applications/" ]; then \
+	    WORKDIR="/__w/applications/applications/"; \
+	  elif [ -d "/home/runner/work/applications/applications/" ]; then \
+	    WORKDIR="/home/runner/work/applications/applications/"; \
+	  else \
+	    WORKDIR=$$(pwd); \
+	  fi; \
+	  . /System/Makefiles/GNUstep.sh; \
+	  CPUS=$$(nproc); \
+	  echo "WORKDIR is set to: $$WORKDIR"; \
+	  cd $$WORKDIR/gap/ported-apps/Games/Chess && gmake -j"$$CPUS" || exit 1 && gmake install; \
+	  cd $$WORKDIR/gap/system-apps/Terminal && gmake -j"$$CPUS" || exit 1 && gmake install; \
+	  cd $$WORKDIR/apps-gorm && gmake -j"$$CPUS" || exit 1 && gmake install; \
+	  cd $$WORKDIR/apps-projectcenter && gmake -j"$$CPUS" || exit 1 && gmake install; \
+	  cd $$WORKDIR/backbone && git reset --hard; \
+	  cd $$WORKDIR && git apply --check backbone-unset-system.patch && git apply backbone-unset-system.patch; \
+	  cd $$WORKDIR/backbone/System && ./bootstrap && ./configure; \
+	  cd $$WORKDIR/backbone/System/Frameworks/BBAppKit && gmake -j"$$CPUS" || exit 1 && gmake install; \
+	  cd $$WORKDIR/backbone/System/Applications/TextEdit && gmake -j"$$CPUS" || exit 1 && gmake install; \
+	  cd $$WORKDIR && tar -cJvf applications.txz /Applications /Library; \
 	fi;
 
 # Define the uninstall target
@@ -53,10 +53,10 @@ uninstall: check_root
 	fi; \
 	if [ -n "$$removed" ]; then \
 	  echo "Removed the following directories: $$removed"; \
-	  return 0; \
+	  exit 0; \
 	else \
 	  echo "No directories needed to be removed."; \
-	  return 1; \
+	  exit 1; \
 	fi
 
 clean: check_root
