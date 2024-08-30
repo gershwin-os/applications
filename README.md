@@ -4,7 +4,9 @@ This repository automates the installation of Gershwin Applications.
 
 ### Requirements
 
-[Gershwin System](https://github.com/gershwin-os/system.git)
+* [Gershwin System](https://github.com/gershwin-os/system.git)
+* autoconf (required for backone apps)
+* automake (required for backone apps)
 
 ## Applications Included
 
@@ -12,6 +14,7 @@ This repository automates the installation of Gershwin Applications.
 - **gap**: Terminal
 - **apps-gorm**: Gorm - Interface Builder for GNUstep
 - **apps-projectcenter**: Project Center - Integrated Development Environment (IDE) for GNUstep
+- **textedit**: TextEdit - Text Editor from backbone
 
 ## Installation Paths (LOCAL domain)
 
