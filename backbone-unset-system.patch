@@ -1,7 +1,7 @@
-diff --git a/System/Backbone.make.in b/System/Backbone.make.in
+diff --git a/backbone/System/Backbone.make.in b/backbone/System/Backbone.make.in
 index db38189..5ca3e22 100644
---- a/System/Backbone.make.in
-+++ b/System/Backbone.make.in
+--- a/backbone/System/Backbone.make.in
++++ b/backbone/System/Backbone.make.in
 @@ -1,5 +1,3 @@
 -export GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
 -
