@@ -51,7 +51,7 @@ uninstall: check_root
 	  return 0; \
 	else \
 	  echo "No directories needed to be removed."; \
-	  return 1; \
+	  return 0; \
 	fi
 
 clean: check_root
